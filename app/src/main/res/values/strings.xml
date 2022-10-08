@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">my garbage</string>
+    <string name="Correo">Correo</string>
+    <string name="Contraseña">Contraseña</string>
+    <string name="BTNingresar">Ingresar</string>
+    <string name="Calendario">Calendario</string>
+    <string name="Basura">Basura</string>
+    <string name="AgregarDispositivo">Agregar Dispositivo</string>
+    <string name="Opciones">Opciones</string>
+    <string name="Perfil">Perfil</string>
+    <string name="Notificacion">Notificación</string>
+    <string name="cerrar">Cerrar Sesión</string>
+    <string name="Historial">Historial</string>
+    <string name="contra">Modificar contraseña</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
