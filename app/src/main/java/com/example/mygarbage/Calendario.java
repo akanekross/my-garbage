@@ -1,5 +1,6 @@
 package com.example.mygarbage;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +22,10 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class Calendario extends Fragment {
+    private EditText ptTitulo,ptDescripcion;
+    private Button btCalendario;
+    private TextView tvFecha;
+    int Dia,Mes,Anio;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -49,16 +61,68 @@ public class Calendario extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
+        InicializarVariables();
+    }
+
+   public void InicializarVariables() {
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_calendario, container, false);
+        tvFecha=(TextView) v.findViewById(R.id.tvFecha);
+        btCalendario = (Button) v.findViewById(R.id.btCalendario);
+        btCalendario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //DatePickerDialog d = new DatePickerDialog(getContext());
+                //d.show();
+                final Calendar calendario=Calendar.getInstance();
+                Dia = calendario.get(Calendar.DAY_OF_MONTH);
+                Mes = calendario.get(Calendar.MONTH);
+                Anio = calendario.get(Calendar.YEAR);
+                //Mes = Calendario.get(Calendar.MONTH);
+                //Anio= Calendario.get(Calendar.YEAR);
+                DatePickerDialog datePickerDialog = new DatePickerDialog( getContext(), new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int AnioSeleccionado, int MesSeleccionado, int DiaSeleccionado) {
+                        String DiaFormateado,MesFormateado;
+                        //Obtener día
+                        if (DiaSeleccionado<10){
+
+                            DiaFormateado="0"+String.valueOf(DiaSeleccionado);
+
+                        }else {
+                            DiaFormateado=String.valueOf(DiaSeleccionado);
+                        }
+                        //Obtener el mes
+                        int mes1 = MesSeleccionado+1;
+                        if (mes1 <10){
+                            MesFormateado="0"+String.valueOf(mes1);
+
+                        }else {
+                            MesFormateado=String.valueOf(mes1);//el value of es para pasar una cadena a un entero
+                        }
+                        //setear fecha en textvew
+                        tvFecha.setText(DiaFormateado+"/"+MesFormateado+"/"+AnioSeleccionado);
+                    }
+                }
+                        ,Anio,Mes,Dia);
+                datePickerDialog.show();
+            }
+
+
+        });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calendario, container, false);
+        return v;
     }
 }

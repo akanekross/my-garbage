@@ -13,7 +13,8 @@ public class principal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
-
+        Calendario c = new Calendario();
+        getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor,c).commit();
         TabLayout tl = (TabLayout) findViewById(R.id.tablayout);
         tl.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override //codificar cosas a ejecutar cuando le das tab  a un tab
@@ -31,7 +32,7 @@ public class principal extends AppCompatActivity {
                         //Toast.makeText(getApplicationContext(), "Basura", Toast.LENGTH_SHORT).show();
                         break;
                     case 2://agregar dispositivos
-                        AgregarDispositivo ad = new AgregarDispositivo();
+                        AgregarDispositivo11 ad = new AgregarDispositivo11();
                         getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor,ad).commit();
                         //Toast.makeText(getApplicationContext(), "Dispositivos", Toast.LENGTH_SHORT).show();
                         break;

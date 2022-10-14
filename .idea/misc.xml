@@ -3,18 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/activity_agregar_dispositivo1.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/activity_configuracion_dispositivo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/activity_contrasenia_olvidada.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/activity_crear_cuenta.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/activity_historial.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/activity_modificar_contrasenia.xml" value="0.176" />
         <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/activity_notificaciones.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/activity_principal.xml" value="0.264" />
         <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/activity_seccion_perfil.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/bottombar.xml" value="0.264" />
         <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/fragment_agregar_dispositivo.xml" value="0.1983695652173913" />
+        <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/fragment_agregar_dispositivo11.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/fragment_basura.xml" value="0.1983695652173913" />
         <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/fragment_calendario.xml" value="0.1983695652173913" />
         <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/fragment_opciones.xml" value="0.264" />
         <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/fragment_perfil.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/TIPITA TU PUEDES/AndroidStudioProjects/mygarbage/app/src/main/res/layout/item_listview.xml" value="0.16666666666666666" />
       </map>
     </option>
   </component>

@@ -1,12 +1,14 @@
 package com.example.mygarbage;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +25,7 @@ public class Opciones extends Fragment {
     private Button btnCambiarContrasenia;//aqui se declaran los botones
     private Button btnNotificacion;
     private Button btnHistorial;
+    private Button btnadios;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -99,7 +102,22 @@ public class Opciones extends Fragment {
                 Intent i = new Intent(getContext(),Historial.class);
                 startActivity(i);
             }
+        });//boton cerrar no funka despues preguntar
+        btnadios=v.findViewById(R.id.botonAdios);
+        btnadios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences datos = PreferenceManager.getDefaultSharedPreferences(getContext().getApplicationContext());
+                SharedPreferences.Editor editor=datos.edit();
+                editor.remove("correo");
+                editor.apply();
+                getActivity().finish();
+
+
+
+            }
         });
+
 
 
 

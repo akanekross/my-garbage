@@ -12,6 +12,13 @@
     <string name="cerrar">Cerrar Sesión</string>
     <string name="Historial">Historial</string>
     <string name="contra">Modificar contraseña</string>
+    <string name="recuerdame">Recuerdame</string>
+    <string name="cuenta">Crear cuenta</string>
+    <string name="olvidar">Olvide mi contraseña</string>
+    <string name="genero">genero</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="masculino">Masculino</string>
+    <string name="femenino">Femenino</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
