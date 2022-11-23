@@ -32,13 +32,7 @@ public class lista {
         this.nombredispositivo = nombredispositivo;
     }
 
-    public String getKey() {
-        return Key;
-    }
 
-    public void setKey(String key) {
-        Key = key;
-    }
 
     @Override
     public String toString() {

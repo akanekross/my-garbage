@@ -125,11 +125,13 @@ public class AgregarDispositivo11 extends Fragment {
         ValueEventListener disListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                lista = new ArrayList<lista>();
                 for (DataSnapshot d: snapshot.getChildren()){
 
                     String nivel = d.child("nivel").getValue().toString();
                     String nombreDispositivo = d.child("nombredispositivo").getValue().toString();
                     String Key = d.child("Key").getValue().toString();
+                    //int Tamano = Integer.parseInt(d.child("Tamano").getValue().toString());
                     lista a = new lista(nivel,nombreDispositivo,Key);
                     lista.add(a);
                 }

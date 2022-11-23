@@ -7,14 +7,16 @@ public class Usuario1 {
     public String Correo;
     public String Contra1;
     public String Contra2;
+    public String spCiudad1;
 
-    public Usuario1(String Key, String Nombre, String Apellido, String Correo, String Contra1, String Contra2) {
+    public Usuario1(String Key, String Nombre, String Apellido, String Correo, String Contra1, String Contra2,String spCiudad1) {
         this.key = Key;
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.Correo = Correo;
         this.Contra1 = Contra1;
         this.Contra2 = Contra2;
+        this.spCiudad1= spCiudad1;
 
 
     }

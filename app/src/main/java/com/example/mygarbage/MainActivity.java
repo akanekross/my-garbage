@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                                     startActivity(i);
 
                                 }else {
-                                    Toast.makeText(MainActivity.this, "ERROR", Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(MainActivity.this, "ERROR", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }

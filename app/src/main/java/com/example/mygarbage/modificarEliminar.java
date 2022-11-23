@@ -45,8 +45,9 @@ public class modificarEliminar extends AppCompatActivity {
             public void onClick(View v) {
                 database = FirebaseDatabase.getInstance();
                 DatabaseReference ref = database.getReference("ConfiguracionDispositivos");
-                ref.child(a.getKey()).removeValue();
-                Toast.makeText(modificarEliminar.this, "si funciona", Toast.LENGTH_SHORT).show();
+                ref.child(a.Key).removeValue();
+                Toast.makeText(modificarEliminar.this, "se elimino", Toast.LENGTH_SHORT).show();
+                finish();
 
             }
         });
@@ -56,10 +57,13 @@ public class modificarEliminar extends AppCompatActivity {
                 database = FirebaseDatabase.getInstance();
                 DatabaseReference ref = database.getReference("ConfiguracionDispositivos");
                 a.setNombredispositivo(nombreDis.getText().toString().trim());
-                ref.child(a.getKey()).setValue(a);
+                a.setNivel(sNivel.getSelectedItem().toString().trim().trim());
+                ref.child(a.Key).setValue(a);
 
 
-                Toast.makeText(modificarEliminar.this, "si funciona", Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(modificarEliminar.this, "se modifico", Toast.LENGTH_SHORT).show();
+                finish();
 
             }
         });
@@ -88,6 +92,39 @@ public class modificarEliminar extends AppCompatActivity {
         btnEliminar1=(Button) findViewById(R.id.btnEliminar);
         nombreDis.setText(a.nombredispositivo);
         etKey1.setText(a.Key);
+        switch (a.nivel) {
+            case "5%":
+                    sNivel.setSelection(1);
+                    break;
+            case "10%":
+                    sNivel.setSelection(2);
+                    break;
+            case "20%":
+                    sNivel.setSelection(3);
+                    break;
+            case "30%":
+                    sNivel.setSelection(4);
+                break;
+            case "40%":
+                sNivel.setSelection(5);
+                break;
+            case "50%":
+                sNivel.setSelection(6);
+                break;
+            case "60%":
+                sNivel.setSelection(7);
+                break;
+            case "70%":
+                sNivel.setSelection(8);
+                break;
+            case "90%":
+                sNivel.setSelection(9);
+                break;
+            case "100%":
+                sNivel.setSelection(10);
+                break;
+        }
+
 
 
 

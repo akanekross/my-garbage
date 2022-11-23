@@ -34,6 +34,7 @@ public class CrearCuenta extends AppCompatActivity {
         etCorreo = findViewById(R.id.etCorreo);
         etContra1 = findViewById(R.id.etContra1);
         etContra2 =findViewById(R.id.etContra2);
+        spCiudad=findViewById(R.id.spCiudad);
 
         //este es el boton
         btnCrear1.setOnClickListener(new View.OnClickListener() {
@@ -44,21 +45,24 @@ public class CrearCuenta extends AppCompatActivity {
                 String correo=etCorreo.getText().toString();
                 String contra1=etContra1.getText().toString();
                 String contra2=etContra2.getText().toString();
+                String spCiudad1=spCiudad.getSelectedItem().toString();
 
-                CargarDatos(nombre, apellido, correo, contra1, contra2);
+                CargarDatos(nombre, apellido, correo, contra1, contra2,spCiudad1);
+                finish();
             }
         });
 
 
     }
 
-    private void CargarDatos(String nombre, String apellido, String correo, String contra1, String contra2) {
+    private void CargarDatos(String nombre, String apellido, String correo, String contra1, String contra2,String spCiudad1) {
         Map <String ,Object> datosUsuario = new HashMap<>();
         datosUsuario.put("nombre", nombre);
         datosUsuario.put("apellido", apellido);
         datosUsuario.put("correo", correo);
         datosUsuario.put("contra1", contra1);
         datosUsuario.put("contra2", contra2);
+        datosUsuario.put("Ciudad",spCiudad1);
         // de esta forma igual funciona y el identificador unico es el nombre
         //database.child("Usuarios").child(nombre).child("nombre").setValue(nombre);
         //database.child("Usuarios").child(nombre).child("apellido").setValue(apellido);

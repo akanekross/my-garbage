@@ -54,8 +54,6 @@ public class ConfiguracionDispositivo extends AppCompatActivity {
             default:
                 Toast.makeText(this,"Error en la selección de tamaño",Toast.LENGTH_SHORT).show();
 
-
-
         }
         Spinner spNivel = (Spinner) findViewById(R.id.spNivel);
         String nivel =spNivel.getSelectedItem().toString();
@@ -66,10 +64,12 @@ public class ConfiguracionDispositivo extends AppCompatActivity {
                 String nombreDispositivo=etNomDispo.getText().toString();
                 String nivel = spNivel1.getSelectedItem().toString();
                 String Key = UUID.randomUUID().toString();
+                //int Tamano= rgTamano.getCheckedRadioButtonId();
                 lista a = new lista(nivel,nombreDispositivo,Key);
                 database = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = database.getReference("ConfiguracionDispositivos");
                 myRef.child(Key).setValue(a);
+                finish();
                 //                //int tamano = rgTamano1.getCheckedRadioButtonId().toString();
 
                 //ConfDispositivo(nombreDispositivo,nivel);
