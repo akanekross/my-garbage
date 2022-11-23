@@ -12,65 +12,26 @@
 
         <Button
             android:id="@+id/btAgregar1"
-            android:layout_width="146dp"
-            android:layout_height="72dp"
+            android:layout_width="372dp"
+            android:layout_height="68dp"
             android:text="@string/AgregarDispositivo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.094"
+            app:layout_constraintHorizontal_bias="0.589"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.091" />
+            app:layout_constraintVertical_bias="0.06" />
 
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="90dp"
-            android:layout_height="85dp"
-            android:src="@drawable/ic_baseline_delete_outline_24"
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="376dp"
+            android:layout_height="550dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.213"
+            app:layout_constraintHorizontal_bias="0.657"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.288" />
-
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="habitación"
-            android:textColor="#040303"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.435" />
-
-        <TextView
-            android:id="@+id/textView27"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="habitación 2"
-            android:textColor="#040303"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.802"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.435" />
-
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="90dp"
-            android:layout_height="84dp"
-            android:src="@drawable/ic_baseline_delete_outline_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.838"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.289" />
+            app:layout_constraintVertical_bias="0.668" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

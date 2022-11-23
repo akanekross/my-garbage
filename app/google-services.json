@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "418239012810",
-    "project_id": "fir-c779d",
-    "storage_bucket": "fir-c779d.appspot.com"
+    "project_number": "386556882189",
+    "project_id": "proyecto-b35df",
+    "storage_bucket": "proyecto-b35df.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:418239012810:android:31fc15c1b4baaa0f63b933",
+        "mobilesdk_app_id": "1:386556882189:android:828246eee36fca6c42d444",
         "android_client_info": {
           "package_name": "com.example.mygarbage"
         }
       },
       "oauth_client": [
         {
-          "client_id": "418239012810-gtec114amc0l7ra46hjg97s7tacaeltt.apps.googleusercontent.com",
+          "client_id": "386556882189-gklah8hopssfs22amrqirjk3t35et2g3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDZKvDLNTZ_a4jfas7YQSNb5807nPI4e4I"
+          "current_key": "AIzaSyBnDAoc8Llxbs3UPcjQ1vD1_wOZkhihZyk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "418239012810-gtec114amc0l7ra46hjg97s7tacaeltt.apps.googleusercontent.com",
+              "client_id": "386556882189-gklah8hopssfs22amrqirjk3t35et2g3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -14,6 +14,9 @@
         android:theme="@style/Theme.MyGarbage"
         tools:targetApi="31">
         <activity
+            android:name=".modificarEliminar"
+            android:exported="false" />
+        <activity
             android:name=".AgregarDispositivo1"
             android:exported="false" />
         <activity

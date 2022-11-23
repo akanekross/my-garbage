@@ -12,61 +12,28 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Calendario#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Calendario extends Fragment {
     private EditText ptTitulo,ptDescripcion;
-    private Button btCalendario;
+    private Button btCalendario,btGuardar;
     private TextView tvFecha;
     int Dia,Mes,Anio;
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
-    public Calendario() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Calendario.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Calendario newInstance(String param1, String param2) {
-        Calendario fragment = new Calendario();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-
-        }
         InicializarVariables();
     }
 
@@ -79,11 +46,22 @@ public class Calendario extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_calendario, container, false);
+
         tvFecha=(TextView) v.findViewById(R.id.tvFecha);
+        //agregue esto///////
+        ptTitulo=(EditText) v.findViewById(R.id.ptTitulo);
+        ptDescripcion= (EditText) v.findViewById(R.id.ptDescripcion);
+        btGuardar = (Button) v.findViewById(R.id.btnGuardar);
+        //////////////////
         btCalendario = (Button) v.findViewById(R.id.btCalendario);
         btCalendario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ///agregue esto//
+
+                /////////////////////
+
+
                 //DatePickerDialog d = new DatePickerDialog(getContext());
                 //d.show();
                 final Calendar calendario=Calendar.getInstance();
@@ -123,6 +101,29 @@ public class Calendario extends Fragment {
 
         });
         // Inflate the layout for this fragment
+        btGuardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String titulo = ptTitulo.getText().toString().trim();
+                String descripcion=ptDescripcion.getText().toString().trim();
+                String fecha = tvFecha.getText().toString().trim();
+
+                cargarDatoCalendario(titulo,descripcion,fecha);
+
+            }
+        });
+
         return v;
+    }
+ /// y agregue esto///
+    private void cargarDatoCalendario(String titulo, String descripcion, String fecha) {
+        Map<String ,Object> datosCalendario = new HashMap<>();
+        datosCalendario.put("titulo", titulo);
+        datosCalendario.put("descripcion",descripcion);
+        datosCalendario.put("fecha",fecha);
+
+        database.getReference("Calendario").push().setValue(datosCalendario);
+
+
     }
 }

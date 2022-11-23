@@ -4,62 +4,74 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CrearCuenta extends AppCompatActivity {
+    Button btnCrear1;
+    EditText etUsuario,etApellido,etCorreo,etContra1,etContra2;
+    Spinner spCiudad;
+    DatabaseReference database; //esto es del tutorial
+    //DatabaseReference database; //esta es la bd
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_cuenta);
+        btnCrear1= findViewById(R.id.btnCrear);
+        database = FirebaseDatabase.getInstance().getReference();
+        etUsuario = findViewById(R.id.etUsuario);
+        etApellido = findViewById(R.id.etApellido);
+        etCorreo = findViewById(R.id.etCorreo);
+        etContra1 = findViewById(R.id.etContra1);
+        etContra2 =findViewById(R.id.etContra2);
+
+        //este es el boton
+        btnCrear1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nombre =etUsuario.getText().toString();
+                String apellido=etApellido.getText().toString();
+                String correo=etCorreo.getText().toString();
+                String contra1=etContra1.getText().toString();
+                String contra2=etContra2.getText().toString();
+
+                CargarDatos(nombre, apellido, correo, contra1, contra2);
+            }
+        });
 
 
     }
-    public void Registrar(View v){
-        //recuperar view
-        EditText etUsuario=(EditText) findViewById(R.id.etUsuario);
-        //recuperar el valor del view
-        String usuario=etUsuario.getText().toString();
-        //
-        EditText etApellido=(EditText) findViewById(R.id.etApellido);
-        String apellido=etApellido.getText().toString();
-        //
-        EditText etCorreo=(EditText) findViewById(R.id.etCorreo);
-        String correo=etCorreo.getText().toString();
-        //
 
+    private void CargarDatos(String nombre, String apellido, String correo, String contra1, String contra2) {
+        Map <String ,Object> datosUsuario = new HashMap<>();
+        datosUsuario.put("nombre", nombre);
+        datosUsuario.put("apellido", apellido);
+        datosUsuario.put("correo", correo);
+        datosUsuario.put("contra1", contra1);
+        datosUsuario.put("contra2", contra2);
+        // de esta forma igual funciona y el identificador unico es el nombre
+        //database.child("Usuarios").child(nombre).child("nombre").setValue(nombre);
+        //database.child("Usuarios").child(nombre).child("apellido").setValue(apellido);
+        //database.child("Usuarios").child(nombre).child("correo").setValue(correo);
+        //database.child("Usuarios").child(nombre).child("contra1").setValue(contra1);
+        //database.child("Usuarios").child(nombre).child("contra2").setValue(contra2);
 
-        //recuperar el radio button
-        RadioGroup rbGenero=(RadioGroup) findViewById(R.id.rbGenero);
-        int id=rbGenero.getCheckedRadioButtonId();
-        String genero="";
-        switch (id){
-            case R.id.rbMasculino:
-                genero="Masculino";
-                break;
-            case R.id.rbFemenino:
-                genero="Femenino";
-                break;
-            default:
-                Toast.makeText(this,"Error en la sección genero",Toast.LENGTH_SHORT).show();
-        }
-        Spinner spCiudad = (Spinner) findViewById(R.id.spCiudad);
-        String ciudad =spCiudad.getSelectedItem().toString();
-
-        EditText etContra1=(EditText) findViewById(R.id.etContra1);
-        String contra1=etContra1.getText().toString();
-        //
-        EditText etContra2=(EditText) findViewById(R.id.etContra2);
-        String contra2=etContra2.getText().toString();
-
-        if(contra1.equals(contra2)){
-            Toast.makeText(this, "Registro con exito!", Toast.LENGTH_SHORT).show();
-
-        }else {
-            Toast.makeText(this, "Error en las contraseñas", Toast.LENGTH_SHORT).show();
-        }
+        database.child("Usuarios").push().setValue(datosUsuario);
+        // igual funciona pero entrega un identificador unico automatico
     }
+    //desde aqui debes volver a pegar el codigo que ya estaba
+
+
+
+//antes de este codigo debe quedar el ulimo corchete al pegar lo otro
 }
